@@ -1,3 +1,1 @@
-module.exports = function contrast() {
-  return 'contrast';
-};
+const DB_name = process.env.DB_NAME;
