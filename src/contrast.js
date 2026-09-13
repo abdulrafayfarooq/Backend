@@ -1,1 +1,0 @@
-const DB_name = process.env.DB_NAME;
