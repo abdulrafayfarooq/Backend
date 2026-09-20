@@ -1,7 +1,8 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import { Limit } from "./constants";
+import  {Limit } from "./constants.js";
+
 
 
 const app = express()
@@ -19,6 +20,10 @@ app.use(cors({
 
  
 
+// importing routes
 
+import userRouter from "./models/routes/user.routes.js";
+
+app.use("/api/v1/user", userRouter);
 
 export { app };

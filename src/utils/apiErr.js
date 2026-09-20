@@ -3,15 +3,15 @@ class apiError extends Error {
         message = "Internal Server Error", 
         statusCode ,
         errors = [],
-        statck = ""
+        stack = ""
     ) {
         super(message);
         this.statusCode = statusCode;
         this.data = null;
         this.errors = errors;
-        this.statck = statck;
+        this.stack = stack;
     
-    if (this.statck === statck) {
+    if (this.stack === stack) {
     
     }else {
         error.captureStackTrace(this, this.constructor);
