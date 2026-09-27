@@ -22,7 +22,7 @@ app.use(cors({
 
 // importing routes
 
-import userRouter from "./models/routes/user.routes.js";
+import userRouter from "./routes/user.routes.js";
 
 app.use("/api/v1/user", userRouter);
 

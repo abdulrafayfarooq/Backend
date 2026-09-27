@@ -1,7 +1,7 @@
 import router from "express";
-import {registerUser ,refreshaccessToken }from "../../controllers/user.controller.js";
-import { upload } from "../../middlewares/multer.models.js";
-import verifyJWT from "../../middlewares/auth.middleware.js";
+import {registerUser ,refreshaccessToken }from "../controllers/user.controller.js";
+import { upload } from "../middlewares/multer.models.js";
+import verifyJWT from "../middlewares/auth.middleware.js";
 const userRouter = router();
 userRouter.route("/register").post(upload.fields([
         { name: "avatar", maxCount: 1 },
