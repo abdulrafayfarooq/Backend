@@ -1,21 +1,12 @@
 class apiError extends Error {
-    constructor(
-        message = "Internal Server Error", 
-        statusCode ,
-        errors = [],
-        stack = ""
-    ) {
+    constructor(statusCode, message = "Internal Server Error", errors = []) {
         super(message);
         this.statusCode = statusCode;
         this.data = null;
         this.errors = errors;
-        this.stack = stack;
-    
-    if (this.stack === stack) {
-    
-    }else {
-        error.captureStackTrace(this, this.constructor);
+        this.success = false;
+        Error.captureStackTrace(this, this.constructor);
     }
 }
-}
-export { apiError };
+
+export default apiError;
