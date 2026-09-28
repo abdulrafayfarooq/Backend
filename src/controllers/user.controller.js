@@ -221,7 +221,7 @@ const getWatchHistory = requestHandler(async (req, res) => {
     return res.status(200).json(new apiRes("Watch history fetched successfully", 200, user[0]?.watchHistory));
 });
 
-export default {
+export {
     registerUser,
     loginUser,
     logoutUser,

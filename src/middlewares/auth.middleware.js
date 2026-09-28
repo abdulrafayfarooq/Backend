@@ -1,13 +1,9 @@
-import asyncHandler from "express-async-handler";
+import requestHandler from "../utils/requstHandler.js";
 import apiError from "../utils/apiErr.js";
-import apiRes from "../utils/apiRes.js";
 import jwt from "jsonwebtoken";
 import { User } from "../models/user.models.js";
 
-
-
-
-const verifyJWT = asyncHandler(async (req, _, next) => {
+const verifyJWT = requestHandler(async (req, _, next) => {
    try {
       const token = req.cookies?.accessToken || req.header("Authorization")?.replace("Bearer ", "");
 
@@ -15,7 +11,7 @@ const verifyJWT = asyncHandler(async (req, _, next) => {
          throw new apiError(401, "Unauthorized request");
       }
 
-      const decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
+      const decodedToken = jwt.verify(token, process.env.Access_Token_Secret);
 
       const user = await User.findById(decodedToken?._id).select("-password -refreshToken");
 
